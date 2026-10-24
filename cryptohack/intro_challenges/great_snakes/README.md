@@ -1,1 +1,1 @@
-Run the attached Python script and it will output your flag.
+Run the attached Python [script](https://cryptohack.org/static/challenges/great_snakes_35381fca29d68d8f3f25c9fa0a9026fb.py) and it will output your flag.
