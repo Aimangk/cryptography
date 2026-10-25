@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 
-int main()
+void hex_to_decimal(char *hex, int *output)
 {
-  char hex[] = "63727970746f7b596f755f77696c6c5f62655f776f726b696e675f776974685f6865785f737472696e67735f615f6c6f747d";
+  int *o=output;
   int len = strlen(hex);
-
+  int j = 0;
   for(int i=0; i < len-1; i+=2)
     {
+     
      char c = hex[i];
      char c2 = hex[i+1];
      int temp1 = 0;
@@ -29,8 +30,11 @@ int main()
        {
          temp2 = c2 - 'a' + 10;
        }
-     printf("%c",temp1+temp2);
+     *(o+j)=temp1+temp2;
+     printf("%d",temp1+temp2);
+     j++;
     }
   printf("\n");
-  return 0;
 }
+
+
