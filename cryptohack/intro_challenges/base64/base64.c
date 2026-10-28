@@ -14,7 +14,17 @@ int main()
   {
     printf("%d |",out[i]);
   }
+  unsigned char lechar;
+  if(n%3)
+  {
+    for(int i = 0; i<n; i+=3)              
+    {
+      lechar = out[i]>>2;
+      printf("%c",alphabet[lechar]);
+      lechar = (out[i] & 3 ) << 4 | out[i+1]>>4 ;
 
+     }
+  }
   return 0;
 }
 
