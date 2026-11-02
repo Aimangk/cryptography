@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+#include <stdbool.h>
 
 int main()
 {
@@ -8,6 +8,8 @@ int main()
     char quotient[strlen(message)+1];
     int i=0;
     int reste = 0;
+    bool continuer = false;
+
     while(message[i]!='\0')
     {
         int nombre = message[i] - '0';
@@ -19,6 +21,14 @@ int main()
         
     }
     quotient[i]='\0';
+    i=0;
 
+    while(quotient[i]!='\0')
+    {
+        if(quotient[i]!='0') continuer=true;
+        i++;
+    }
+    i=0;
+    strcpy(message, quotient);
     return 0;
 }
