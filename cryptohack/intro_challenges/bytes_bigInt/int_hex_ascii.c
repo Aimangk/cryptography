@@ -41,6 +41,14 @@ int main()
         strcpy(message, quotient);
     } while (continuer);
 
-    
+    char final_message[j+1];
+    int k=0;
+    for(int i = j-1; 0<=i; i--)
+    {
+        final_message[k]=tab[i];
+        k++;
+    }
+    final_message[k]='\0';
+    printf("%s\n",final_message);
     return 0;
 }
