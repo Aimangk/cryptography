@@ -11,17 +11,19 @@ int main()
         printf("%x", lemot[i]);
         i++;
     }
-    char lacle[] = "63727970746f7b";
-    char chiffre[] = "0e0b213f26041e";
+    char lacle[] =
+        "0e0b213f26041e480b26217f27342e175d0e070a3c5b103e2526217f27342e175d0e077e263451150104";
+    char chiffre[] = "myXORkey";
     int n = strlen(lacle);
-    int chiffre_out[n / 2];
+    char lechall[n+1];
     int lacle_out[n / 2];
     hex_to_decimal(lacle, lacle_out);
-    hex_to_decimal(chiffre, chiffre_out);
 
-    for (int i = 0; i < n / 2; i++)
+    for (int i = 0; i < n; i++)
     {
-        printf("%c", chiffre_out[i] ^ lacle_out[i]);
+        lechall[i]=lacle_out[i] ^ chiffre[i % strlen(chiffre)];
     }
-    return 0;
+    lechall[n + 1] = '\0';
+    printf("%s",lechall);
+     return 0;
 }
